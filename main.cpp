@@ -52,12 +52,16 @@ int main(int argc, char* argv[]) {
             for (int i = 0; i < thread_count; i++) {
                 total_data_movement += data_movement[i];
             }
-            
+#ifdef __cpp_lib_format
             std::cout << std::format(
                 "Total   data movement  (so far) : {:>10.2f} MB\n"
                 "Average data movement per second: {:>10.2f} MB\n\n", 
                 (float)total_data_movement / (1024 * 1024), 
                 (float)total_data_movement / (1024 * 1024) / ((i - 1) / 2));
+#else
+            std::cout << "Total   data movement  (so far) : " << (float)total_data_movement / (1024 * 1024) << " MB\n"
+                "Average data movement per second: " << (float)total_data_movement / (1024 * 1024) / ((i - 1) / 2) << " MB\n\n";   
+#endif    
         }
         else for (int j = 0; j < thread_count; j++) {
             set_info_flags[j] = true;
