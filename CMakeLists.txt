@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.10)
 project(BandwidthSaturationTest)
 
 set(CMAKE_CXX_STANDARD 23)
+set(LLVM_CXX_STD c++17)
 add_executable(main main.cpp)
 
 
