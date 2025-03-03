@@ -59,7 +59,8 @@ int main(int argc, char* argv[]) {
                 (float)total_data_movement / (1024 * 1024), 
                 (float)total_data_movement / (1024 * 1024) / ((i - 1) / 2));
 #else
-            std::cout << "Total   data movement  (so far) : " << (float)total_data_movement / (1024 * 1024) << " MB\n"
+            std::cout << 
+                "Total   data movement  (so far) : " << (float)total_data_movement / (1024 * 1024) << " MB\n"
                 "Average data movement per second: " << (float)total_data_movement / (1024 * 1024) / ((i - 1) / 2) << " MB\n\n";   
 #endif    
         }
